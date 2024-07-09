@@ -1,0 +1,35 @@
+# Site settings
+title: Riverwatch Digital
+email: riverwatchdigital@gmail.com
+url: https://riverwatchdigital.github.io
+description: "Cars, Content, Culture"
+
+# Color settings (hex-codes without the leading hash-tag)
+color:
+  primary-dark: '#000000'
+  links: '#219ab3'
+
+# Footer settings
+footer: Riverwatch Digital
+
+# Social networks usernames (many more available: google-plus, flickr, dribbble, pinterest, instagram, tumblr, linkedin, etc.)
+social:
+  - title: instagram
+    handle: 412.coyote
+    url: https://www.instagram.com/412.coyote/
+  - title: instagram
+    handle: nyx.auto
+    url: https://www.instagram.com/nyx.auto/
+  #- title: TikTok
+  #  handle: clocks brah
+  #  url: https://google.com
+  - title: youtube
+    handle: Riverwatch Digital
+    url: https://youtube.com
+  - title: github
+    handle: Riverwatch Digital
+    url: https://github.com/riverwatchdigital
+
+# Build settings
+markdown: kramdown
+permalink: pretty
