@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+{% include head.html %}
+<style>
+    body {
+        margin: 0;
+        font-family: sans-serif;
+    }
+
+    .linktree-container {
+        font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+        width: 300px;
+        margin: auto;
+        background-color: #000000;
+        padding: 20px;
+        border-radius: 15px;
+        text-align: center;
+    }
+
+    .link-item {
+        display: block;
+        color: #333;
+        /*text-decoration: none;*/
+        margin-bottom: 10px;
+        font-size: 16px;
+    }
+
+    .link-item:hover {
+        color: #000;
+    }
+
+    /* Media query for responsive design */
+    @media (max-width: 768px) {
+        .linktree-container {
+            width: 90%;
+        }
+    }
+
+    .linktree-wrapper {
+        align-content: center;
+        height: 100vh;
+        background-color: rgba(69,69,69,0.69);
+    }
+
+    .linktree-body {
+        background-image: url(/img/shelbyfrontliptopdown.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+</style>
+
+<body class="linktree-body">
+    <div class="linktree-wrapper">
+        <div class="linktree-container">
+            <h2>Socials</h2>
+            <p>Stay up to date with Riverwatch Digital!</p>
+            <ul class=" list-inline banner-social-buttons">
+                {% for network in site.linktree %}
+                <li>
+                    <a href="{{ network.url }}" class="btn btn-default btn-lg" target="_blank"><i
+                            class="fa fa-{{ network.title }} fa-fw"></i> <span class="network-name">{{ network.handle
+                            }}</span></a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+</body>
+
+</html>
