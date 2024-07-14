@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+{% include head.html %}
+<style>
+    img {
+        max-width: 100%;
+        height: auto;
+        vertical-align: middle;
+        display: inline-block;
+    }
+
+    /* Main CSS */
+    .grid-wrapper {
+        padding: 10px;
+        margin-top: 10vh;
+    }
+
+    .grid-wrapper>div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .grid-wrapper>div>img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+
+    .grid-wrapper {
+        display: grid;
+        grid-gap: 15px;
+        grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+        grid-auto-rows: 400px;
+        grid-auto-flow: dense;
+    }
+
+    .grid-wrapper .wide {
+        grid-column: span 2;
+    }
+
+    .grid-wrapper .tall {
+        grid-row: span 2;
+    }
+
+    .grid-wrapper .big {
+        grid-column: span 2;
+        grid-row: span 2;
+    }
+</style>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+    {% include nav.html %}
+    <section class="grid-wrapper">
+        {% for image in site.static_files %}
+        {% if image.path contains 'img/gallery' %}
+        {% unless image.path contains 'vert' %}
+        <div>
+            <img src="{{ site.baseurl }}{{ image.path }}" alt="image" class="gallery-image" />
+        </div>
+        {% endunless %}
+        {% endif %}
+        {% endfor %}
+    </section>
+    {% include js.html %}
+</body>
+
+</html>
