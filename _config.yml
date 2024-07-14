@@ -26,9 +26,20 @@ social:
   - title: youtube
     handle: Riverwatch Digital
     url: https://youtube.com
-  - title: github
+  - title: minus
+    handle: Email Us!
+    url: mailto:riverwatchdigital@gmail.com
+  #- title: github
+  #  handle: Riverwatch Digital
+  #  url: https://github.com/riverwatchdigital
+
+linktree:
+  - title: youtube
     handle: Riverwatch Digital
-    url: https://github.com/riverwatchdigital
+    url: https://youtube.com
+  - title: minus
+    handle: Email Us!
+    url: mailto:riverwatchdigital@gmail.com
 
 # Build settings
 markdown: kramdown
