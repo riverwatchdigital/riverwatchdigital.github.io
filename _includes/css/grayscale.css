@@ -267,7 +267,7 @@ a:focus {
     width: 100%;
     padding: 50px 0;
     color: #fff;
-    background: url(/img/main/k5cherryblossomfinal_filtered2.jpg) no-repeat center bottom fixed; /*k5cherryblossomfinal.jpg frontontshot2.jpg*/
+    background: url(/img/main/reardetail_filtered.jpg) no-repeat center bottom fixed;
     background-color: {{ site.color.primary-dark }};
     -webkit-background-size: cover;
     -moz-background-size: cover;

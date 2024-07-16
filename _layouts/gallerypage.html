@@ -11,8 +11,15 @@
 
     /* Main CSS */
     .grid-wrapper {
-        padding: 10px;
-        margin-top: 10vh;
+        padding: 50px;
+        margin-top: 5vh;
+    }
+
+    @media screen and (max-width: 768px) {
+        .grid-wrapper {
+            padding: 0px;
+            margin-top: 5vh;
+        }
     }
 
     .grid-wrapper>div {
@@ -30,9 +37,9 @@
 
     .grid-wrapper {
         display: grid;
-        grid-gap: 15px;
-        grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-        grid-auto-rows: 400px;
+        grid-gap: 50px;
+        grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+        grid-auto-rows: 300px;
         grid-auto-flow: dense;
     }
 
@@ -51,15 +58,17 @@
 </style>
 
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
-    {% include nav.html %}
+    {% include nav_unmain.html %}
     <section class="grid-wrapper">
         {% for image in site.static_files %}
         {% if image.path contains 'img/gallery' %}
+        {% if image.path contains 'resized_' %}
         {% unless image.path contains 'vert' %}
         <div>
             <img src="{{ site.baseurl }}{{ image.path }}" alt="image" class="gallery-image" />
         </div>
         {% endunless %}
+        {% endif %}
         {% endif %}
         {% endfor %}
     </section>
