@@ -140,7 +140,7 @@ a:focus {
     padding: 100px 0;
     text-align: center;
     color: #fff;
-    background: url(/img/supraherocropped_filtered2.jpg) no-repeat bottom center fixed; /*horthreefourfinal supraherocropped*/
+    background: url(/img/main/supraherocropped_filtered2.jpg) no-repeat bottom center fixed; /*horthreefourfinal supraherocropped*/
     background-color: {{ site.color.primary-dark }};
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -152,7 +152,7 @@ a:focus {
 @media screen and (max-width: 768px) {
     .intro {
         /* Override background for mobile */
-        background: url(/img/vert_supra.jpg) no-repeat center center; /* Replace with your mobile image URL */
+        background: url(/img/main/vert_supra.jpg) no-repeat center center; /* Replace with your mobile image URL */
         background-size: cover; /* Ensure mobile image fits within section */
     }
 }
@@ -267,7 +267,7 @@ a:focus {
     width: 100%;
     padding: 50px 0;
     color: #fff;
-    background: url(/img/k5cherryblossomfinal_filtered2.jpg) no-repeat center bottom fixed; /*k5cherryblossomfinal.jpg frontontshot2.jpg*/
+    background: url(/img/main/reardetail_filtered.jpg) no-repeat center bottom fixed;
     background-color: {{ site.color.primary-dark }};
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -279,7 +279,7 @@ a:focus {
 @media screen and (max-width: 768px) {
     .download-section {
         /* Override background for mobile */
-        background: url(/img/k5cherryblossomfinal_filtered2.jpg) no-repeat center bottom; /* Replace with your mobile image URL */
+        background: url(/img/main/k5cherryblossomfinal_filtered2.jpg) no-repeat center bottom; /* Replace with your mobile image URL */
         background-size: cover; /* Ensure mobile image fits within section */
     }
 }
