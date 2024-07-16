@@ -279,7 +279,7 @@ a:focus {
 @media screen and (max-width: 768px) {
     .download-section {
         /* Override background for mobile */
-        background: url(/img/main/k5cherryblossomfinal_filtered2.jpg) no-repeat center bottom; /* Replace with your mobile image URL */
+        background: url(/img/main/reardetail_filtered.jpg) no-repeat center bottom; /* Replace with your mobile image URL */
         background-size: cover; /* Ensure mobile image fits within section */
     }
 }
