@@ -38,8 +38,8 @@
     .grid-wrapper {
         display: grid;
         grid-gap: 50px;
-        grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-        grid-auto-rows: 300px;
+        grid-template-columns: repeat(auto-fit, minmax(500px, 0.5fr));
+        grid-auto-rows: minmax(330px, 0.3fr);
         grid-auto-flow: dense;
     }
 
@@ -59,9 +59,28 @@
 
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
     {% include nav_unmain.html %}
-    <section class="grid-wrapper">
+    <section class="grid-wrapper" id="automotive">
+        <div class="col-lg-8 col-lg-offset-2">
+            <h2>AUTOMOTIVE</h2>
+        </div>
         {% for image in site.static_files %}
-        {% if image.path contains 'img/gallery' %}
+        {% if image.path contains 'img/gallery/automotive' %}
+        {% if image.path contains 'resized_' %}
+        {% unless image.path contains 'vert' %}
+        <div>
+            <img src="{{ site.baseurl }}{{ image.path }}" alt="image" class="gallery-image" />
+        </div>
+        {% endunless %}
+        {% endif %}
+        {% endif %}
+        {% endfor %}
+    </section>
+    <section class="grid-wrapper" id="landscape">
+        <div class="col-lg-8 col-lg-offset-2">
+            <h2>LANDSCAPE</h2>
+        </div>
+        {% for image in site.static_files %}
+        {% if image.path contains 'img/gallery/landscape' %}
         {% if image.path contains 'resized_' %}
         {% unless image.path contains 'vert' %}
         <div>
