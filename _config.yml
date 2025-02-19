@@ -14,28 +14,37 @@ footer: Riverwatch Digital
 
 # Social networks usernames (many more available: google-plus, flickr, dribbble, pinterest, instagram, tumblr, linkedin, etc.)
 social:
-  - title: instagram
-    handle: 412.coyote
-    url: https://www.instagram.com/412.coyote/
-  - title: instagram
-    handle: nyx.auto
-    url: https://www.instagram.com/nyx.auto/
-  #- title: TikTok
-  #  handle: clocks brah
-  #  url: https://google.com
-  - title: youtube
-    handle: Riverwatch Digital
+  # - title: instagram
+  #   handle: 412.coyote
+  #   url: https://www.instagram.com/412.coyote/
+  # - title: instagram
+  #   handle: nyx.auto
+  #   url: https://www.instagram.com/nyx.auto/
+  - title: minus
+    handle: Instagram  # riverwatch.digital
+    url: https://www.instagram.com/riverwatch.digital/
+  - title: minus
+    handle: TikTok  # riverwatch.digital
+    url: https://www.tiktok.com/@riverwatch.digital
+  - title: minus
+    handle: YouTube  # Riverwatch Digital
     url: https://www.youtube.com/@RiverwatchDigital
   - title: minus
     handle: Email Us!
     url: mailto:riverwatchdigital@gmail.com
-  #- title: github
-  #  handle: Riverwatch Digital
-  #  url: https://github.com/riverwatchdigital
+  # - title: github
+  #   handle: Riverwatch Digital
+  #   url: https://github.com/riverwatchdigital
 
 linktree:
-  - title: youtube
-    handle: Riverwatch Digital
+  - title: minus
+    handle: Instagram  # riverwatch.digital
+    url: https://www.instagram.com/riverwatch.digital/
+  - title: minus
+    handle: TikTok  # riverwatch.digital
+    url: https://www.tiktok.com/@riverwatch.digital
+  - title: minus
+    handle: YouTube  # Riverwatch Digital
     url: https://www.youtube.com/@RiverwatchDigital
   - title: minus
     handle: Email Us!
