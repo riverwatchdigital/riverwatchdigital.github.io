@@ -14,4 +14,11 @@ pay close attention to the naming convention used.
 ## RESIZEIMG.PY
 This script is used to resize all the images uploaded. This is done to optimize them for web viewing.<br>
 To run the script, install the Pillow python library to a virtual environment.<br>
-The script will save the resized image as a file with the same name but 'resized_' appended to the front. (resized_ORIGINALNAME)
+The script will save the resized image as a file with the same name but 'resized_' appended to the front. (resized_ORIGINALNAME)<br>
+
+## USAGE
+This script should be called from the directory that this README file is in - ie, from the ```/img``` directory.<br>
+1) Place all images you want into the ```/img/gallery/``` folder.
+2) Run the script with ```python resizeimg.py```.
+3) Move the resized photos with name ```resized_*``` to the desired folders, such as ```/img/gallery/automotive/```
+4) Delete the original pictures from the ```/img/gallery/``` folder, or move them elsewhere.
