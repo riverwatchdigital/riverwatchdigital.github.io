@@ -77,10 +77,10 @@
     </section>
     <section class="grid-wrapper" id="landscape">
         <div class="col-lg-8 col-lg-offset-2">
-            <h2>LANDSCAPE</h2>
+            <h2>Business</h2>
         </div>
         {% for image in site.static_files %}
-        {% if image.path contains 'img/gallery/landscape' %}
+        {% if image.path contains 'img/gallery/business' %}
         {% if image.path contains 'resized_' %}
         {% unless image.path contains 'vert' %}
         <div>
