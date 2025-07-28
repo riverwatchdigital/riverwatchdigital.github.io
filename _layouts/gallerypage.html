@@ -2,58 +2,58 @@
 <html>
 {% include head.html %}
 <style>
-    img {
-        max-width: 100%;
-        height: auto;
-        vertical-align: middle;
-        display: inline-block;
-    }
-
-    /* Main CSS */
-    .grid-wrapper {
+    section.grid-wrapper {
         padding: 50px;
-        margin-top: 5vh;
+        margin-top: 7vh;
     }
 
-    @media screen and (max-width: 768px) {
-        .grid-wrapper {
-            padding: 0px;
-            margin-top: 5vh;
-        }
-    }
-
-    .grid-wrapper>div {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .grid-wrapper>div>img {
+    .grid-wrapper>div>div>img {
         width: 100%;
         height: 100%;
         object-fit: cover;
         border-radius: 10px;
     }
 
-    .grid-wrapper {
-        display: grid;
-        grid-gap: 50px;
-        grid-template-columns: repeat(auto-fit, minmax(500px, 0.5fr));
-        grid-auto-rows: minmax(330px, 0.3fr);
-        grid-auto-flow: dense;
+    div.gallery img {
+        width: 100%;
+        height: auto;
     }
 
-    .grid-wrapper .wide {
-        grid-column: span 2;
+    div.desc {
+        padding: 15px;
+        text-align: center;
     }
 
-    .grid-wrapper .tall {
-        grid-row: span 2;
+    * {
+        box-sizing: border-box;
     }
 
-    .grid-wrapper .big {
-        grid-column: span 2;
-        grid-row: span 2;
+    .responsive {
+        /* 100/3 = 33.333..., so each picture is 30% + 1.5%*2 = 33%  */
+        margin: 1.5%;
+        float: left;
+        width: 30%;
+    }
+
+    @media only screen and (max-width: 1250px) {
+        .responsive {
+            /* 100/2 = 50, so each picture is 48% + 1%*2 = 50%  */
+            margin: 1%;
+            float: left;
+            width: 48%;
+        }
+    }
+
+    @media only screen and (max-width: 650px) {
+        .responsive {
+            width: 100%;
+        }
+    }
+
+    .clearfix:after {
+        content: "";
+        display: table;
+        clear: both;
     }
 </style>
 
@@ -67,15 +67,24 @@
         {% if image.path contains 'img/gallery/automotive' %}
         {% if image.path contains 'resized_' %}
         {% unless image.path contains 'vert' %}
+        <!--
         <div>
             <img src="{{ site.baseurl }}{{ image.path }}" alt="image" class="gallery-image" />
+        </div>
+        -->
+        <div class="responsive">
+            <div class="gallery">
+                <img src="{{ site.baseurl }}{{ image.path }}" alt="image" width="600" height="400">
+            </div>
         </div>
         {% endunless %}
         {% endif %}
         {% endif %}
         {% endfor %}
+
     </section>
-    <section class="grid-wrapper" id="landscape">
+    <div class="clearfix"></div>
+    <section class="grid-wrapper" id="business">
         <div class="col-lg-8 col-lg-offset-2">
             <h2>Business</h2>
         </div>
@@ -83,8 +92,15 @@
         {% if image.path contains 'img/gallery/business' %}
         {% if image.path contains 'resized_' %}
         {% unless image.path contains 'vert' %}
+        <!--
         <div>
             <img src="{{ site.baseurl }}{{ image.path }}" alt="image" class="gallery-image" />
+        </div>
+        -->
+        <div class="responsive">
+            <div class="gallery">
+                <img src="{{ site.baseurl }}{{ image.path }}" alt="image" width="600" height="400">
+            </div>
         </div>
         {% endunless %}
         {% endif %}
