@@ -75,6 +75,45 @@
         margin: 0;
         float: none;
     }
+
+    .gallery-img {
+        cursor: zoom-in;
+    }
+
+    .img-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.9);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.25s ease;
+        z-index: 9999;
+    }
+
+    .img-overlay.show {
+        opacity: 1;
+        pointer-events: all;
+    }
+
+    .img-overlay img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        max-width: 90vw;
+        max-height: 90vh;
+        display: block;
+    }
+
+    .img-overlay .close {
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        font-size: 40px;
+        color: white;
+        cursor: pointer;
+    }
 </style>
 
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
@@ -94,7 +133,7 @@
         -->
         <div class="responsive">
             <div class="gallery">
-                <img src="{{ site.baseurl }}{{ image.path }}"  alt="image" width="600" height="400">
+                <img src="{{ site.baseurl }}{{ image.path }}" class="gallery-img" alt="image" width="600" height="400">
             </div>
         </div>
         {% endunless %}
@@ -118,7 +157,7 @@
         -->
         <div class="responsive">
             <div class="gallery">
-                <img src="{{ site.baseurl }}{{ image.path }}" alt="image" width="600" height="400">
+                <img src="{{ site.baseurl }}{{ image.path }}" class="gallery-img" alt="image" width="600" height="400">
             </div>
         </div>
         {% endunless %}
@@ -127,6 +166,28 @@
         {% endfor %}
     </section>
     {% include js.html %}
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const overlay = document.createElement("div");
+            overlay.className = "img-overlay";
+            overlay.innerHTML = `<img><span class="close">×</span>`;
+            document.body.appendChild(overlay);
+
+            const overlayImg = overlay.querySelector("img");
+
+            document.querySelectorAll(".gallery-img").forEach(img => {
+                img.addEventListener("click", () => {
+                    overlayImg.src = img.src;
+                    overlay.classList.add("show");
+                });
+            });
+
+            overlay.addEventListener("click", () => {
+                overlay.classList.remove("show");
+            });
+        });
+    </script>
+
 </body>
 
 </html>
