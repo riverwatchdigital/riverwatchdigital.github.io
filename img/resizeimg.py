@@ -7,6 +7,8 @@ cwd = os.getcwd()
 gallerydir = os.path.join(cwd, "gallery")
 photo_names = [x for x in os.listdir(gallerydir) if os.path.isfile(os.path.join(gallerydir, x))]
 
+print("resizing the following photos:", photo_names)
+
 for photo_name in photo_names:
     fpath = os.path.join(gallerydir, photo_name)
     print(fpath)

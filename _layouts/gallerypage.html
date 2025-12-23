@@ -28,39 +28,59 @@
         box-sizing: border-box;
     }
 
+    .section-title {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /*min-height: 150px;*/
+        min-height: unset;
+        height: auto;
+        text-align: center;
+        /* span full row */
+        grid-column: 1 / -1;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .section-title h2 {
+        margin: 0.25em 0;
+        /* tighten vertical spacing */
+    }
+
+    section.grid-wrapper {
+        padding: 50px;
+        margin-top: 7vh;
+
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+    }
+
+    /* 2 per row */
+    @media (max-width: 1250px) {
+        section.grid-wrapper {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    /* 1 per row */
+    @media (max-width: 650px) {
+        section.grid-wrapper {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    /* neutralize old float behavior */
     .responsive {
-        /* 100/3 = 33.333..., so each picture is 30% + 1.5%*2 = 33%  */
-        margin: 1.5%;
-        float: left;
-        width: 30%;
-    }
-
-    @media only screen and (max-width: 1250px) {
-        .responsive {
-            /* 100/2 = 50, so each picture is 48% + 1%*2 = 50%  */
-            margin: 1%;
-            float: left;
-            width: 48%;
-        }
-    }
-
-    @media only screen and (max-width: 650px) {
-        .responsive {
-            width: 100%;
-        }
-    }
-
-    .clearfix:after {
-        content: "";
-        display: table;
-        clear: both;
+        width: auto;
+        margin: 0;
+        float: none;
     }
 </style>
 
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
     {% include nav_unmain.html %}
     <section class="grid-wrapper" id="automotive">
-        <div class="col-lg-8 col-lg-offset-2">
+        <div class="section-title">
             <h2>AUTOMOTIVE</h2>
         </div>
         {% for image in site.static_files %}
@@ -74,7 +94,7 @@
         -->
         <div class="responsive">
             <div class="gallery">
-                <img src="{{ site.baseurl }}{{ image.path }}" alt="image" width="600" height="400">
+                <img src="{{ site.baseurl }}{{ image.path }}"  alt="image" width="600" height="400">
             </div>
         </div>
         {% endunless %}
@@ -83,9 +103,8 @@
         {% endfor %}
 
     </section>
-    <div class="clearfix"></div>
     <section class="grid-wrapper" id="business">
-        <div class="col-lg-8 col-lg-offset-2">
+        <div class="section-title">
             <h2>Business</h2>
         </div>
         {% for image in site.static_files %}
