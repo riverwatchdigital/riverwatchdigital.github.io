@@ -5,7 +5,10 @@ import os
 # images in the gallery folder are the unprocessed, not resized ones.
 cwd = os.getcwd()
 gallerydir = os.path.join(cwd, "gallery")
-photo_names = [x for x in os.listdir(gallerydir) if os.path.isfile(os.path.join(gallerydir, x))]
+photo_names = [
+    x for x in os.listdir(gallerydir)
+    if os.path.isfile(os.path.join(gallerydir, x)) and "DS_Store" not in x
+]
 
 print("resizing the following photos:", photo_names)
 
